@@ -64,11 +64,11 @@ Therefore the next features in priority are:
 Screenshots
 ===========
 
-Floating window view
+### Floating window view
 
 ![floating](https://i.imgur.com/r2Is7jw.png)
 
-Default view
+### Default view
 
 ![default](https://i.imgur.com/5RXkn9J.png)
 
