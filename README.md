@@ -61,6 +61,17 @@ Therefore the next features in priority are:
 * Make the plugin compatible with Linux first and then Windows.
 * Add support for Firefox.
 
+Screenshots
+===========
+
+Floating window view
+
+![floating](https://i.imgur.com/r2Is7jw.png)
+
+Default view
+
+![default](https://i.imgur.com/5RXkn9J.png)
+
 License
 =======
 
