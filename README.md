@@ -1,7 +1,7 @@
 vim-browser-tabs
 ================
 
-Vim plugin to fuzzy search tabs opened in browser and switch.
+Vim plugin to fuzzy search tabs opened in all the browser windows and switch.
 
 ![Demo](https://i.imgur.com/kTJeHp9.gif)
 
