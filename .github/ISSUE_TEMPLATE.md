@@ -1,0 +1,13 @@
+<!-- Check all that apply [x] -->
+- Category
+    - [ ] Question
+    - [ ] Bug
+    - [ ] Suggestion
+- OS
+    - [ ] Linux
+    - [ ] macOS
+    - [ ] Windows
+    - [ ] Etc.
+- Vim
+    - [ ] Vim
+    - [ ] Neovim
