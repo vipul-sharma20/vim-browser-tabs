@@ -1,0 +1,80 @@
+*vim-browser-tabs.txt*  Search and switch to browser tabs using Vim
+*vim-browser-tabs*
+        _               _                                          _        _         ~
+       (_)             | |                                        | |      | |        ~
+ __   ___ _ __ ___ ____| |__  _ __ _____      _____  ___ _ __ ____| |_ __ _| |__  ___ ~
+ \ \ / / | '_ ` _ \____| '_ \| '__/ _ \ \ /\ / / __|/ _ \ '__|____| __/ _` | '_ \/ __|~
+  \ V /| | | | | | |   | |_) | | | (_) \ V  V /\__ \  __/ |       | || (_| | |_) \__ \~
+   \_/ |_|_| |_| |_|   |_.__/|_|  \___/ \_/\_/ |___/\___|_|        \__\__,_|_.__/|___/~
+
+==============================================================================
+CONTENTS                                           *vim-browser-tabs-contents*
+
+   01. Intro ........................................ |vim-browser-tabs-intro|
+   02. Features .................................. |vim-browser-tabs-features|
+   03. Configuration ........................ |vim-browser-tabs-configuration|
+   04. Commands .................................. |vim-browser-tabs-commands|
+   05. Usage......................................... |vim-browser-tabs-usage|
+   06. Customization ........................ |vim-browser-tabs-customization|
+   07. Credits .................................... |vim-browser-tabs-credits|
+   08. Contributions ........................ |vim-browser-tabs-contributions|
+   09. License .................................... |vim-browser-tabs-license|
+
+==============================================================================
+INTRODUCTION                                          *vim-browser-tabs-intro*
+
+vim-browser-tabs is a plugin to fuzzy search active browser tabs and switch
+
+==============================================================================
+FEATURES                                           *vim-browser-tabs-features*
+
+*  Fetches a list of active tabs in the browser
+*  Fuzzy searching of tab names, url and switching
+
+==============================================================================
+CONFIGURATION                                 *vim-browser-tabs-configuration*
+
+* This plugin mandatorily needs fzf.vim.
+  Get fzf.vim from: https://github.com/junegunn/fzf.vim
+
+* Browser name to fetch tabs from. Eg: Chrome Browser, Brave etc.
+  let g:browser_tabs_default_browser='Chrome Browser'
+
+* Window layout for browser tab list result. Can be 'default' or 'floating'
+  let g:browser_tabs_window_layout='floating'
+Note: Floating window layout support is only possible in Neovim version >= 0.4.x
+
+==============================================================================
+COMMANDS                                           *vim-browser-tabs-commands*
+
+:GetBrowserTabs                                              *:GetBrowserTabs*
+  Fetches all the browser tabs
+  Note: this command needs fzf.vim
+
+==============================================================================
+USAGE                                                 *vim-browser-tabs-usage*
+
+Call `:GetBrowserTabs` and select the browser tab of your choice
+
+==============================================================================
+CUSTOMIZATION                                 *vim-browser-tabs-customization*
+
+IN-PROGRESS: Layout window customizations
+
+==============================================================================
+CREDITS                                             *vim-browser-tabs-credits*
+
+Rasukarusan: https://github.com/Rasukarusan/fzf-chrome-active-tab
+Junegunn Choi: https://github.com/junegunn/fzf.vim
+
+==============================================================================
+CONTRIBUTIONS                                 *vim-browser-tabs-contributions*
+
+Contributions and pull requests are welcome.
+
+==============================================================================
+LICENSE                                             *vim-browser-tabs-license*
+
+MIT License. Copyright © 2019 Vipul Sharma
+
+ vim:tw=78:ts=8:ft=help:norl:
