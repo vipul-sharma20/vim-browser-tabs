@@ -74,4 +74,4 @@ MIT
 [6]: https://github.com/Shougo/dein.vim
 [7]: https://github.com/k-takata/minpac/
 [8]: https://cricbuzz.com
-[9]: plugin/doc/vim-browser-tabs.txt
+[9]: doc/vim-browser-tabs.txt
