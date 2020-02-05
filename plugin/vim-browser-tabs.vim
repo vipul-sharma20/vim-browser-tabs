@@ -124,28 +124,32 @@ function! Browser(e)
 endfunction
 
 " Create floating window layout
-" TODO: fix hardcoded window parameters
-function! FloatingLayout()
-    let buf = nvim_create_buf(v:false, v:true)
-    call setbufvar(buf, '&signcolumn', 'no')
+function! CreateCenteredFloatingWindow()
+    let width = min([&columns - 4, max([80, &columns - 20])]) - 30
+    let height = min([&lines - 4, max([20, &lines - 10])]) - 5
+    let top = ((&lines - height) / 2) + 1
+    let left = (&columns - width) / 2
+    let opts = {'relative': 'editor', 'row': top, 'col': left, 'width': width, 'height': height, 'style': 'minimal'}
 
-    let height = &lines - 7
-    let width = float2nr(&columns - (&columns * 2 / 10)) - 30
-    let col = float2nr((&columns - width) / 2)
-
-    let opts = {
-          \ 'relative': 'editor',
-          \ 'row': 8,
-          \ 'col': 25,
-          \ 'width': &columns - 50,
-          \ 'height': &lines - 15
-          \ }
-    call nvim_open_win(buf, v:true, opts)
+    let top = "❋" . repeat("─", width - 2) . "❋"
+    let mid = "│" . repeat(" ", width - 2) . "│"
+    let bot = "❋" . repeat("─", width - 2) . "❋"
+    let lines = [top] + repeat([mid], height - 2) + [bot]
+    let s:buf = nvim_create_buf(v:false, v:true)
+    call nvim_buf_set_lines(s:buf, 0, -1, v:true, lines)
+    call nvim_open_win(s:buf, v:true, opts)
+    set winhl=Normal:Floating
+    let opts.row += 1
+    let opts.height -= 2
+    let opts.col += 2
+    let opts.width -= 4
+    call nvim_open_win(nvim_create_buf(v:false, v:true), v:true, opts)
+    au BufWipeout <buffer> exe 'bw '.s:buf
 endfunction
 
 " Driving FZF function
 command! -bang -nargs=* GetBrowserTabs call fzf#run({
-        \ 'window': g:browser_tabs_window_layout == 'floating' ? 'call FloatingLayout()' : '',
+        \ 'window': g:browser_tabs_window_layout == 'floating' ? 'call CreateCenteredFloatingWindow()' : '',
         \ 'source': extend(['Win Tab    Name'], Tabs()),
         \ 'sink': function('Browser'),
         \ 'options': '-x --preview-window="80%" --ansi --tiebreak=begin --header-lines=1',
